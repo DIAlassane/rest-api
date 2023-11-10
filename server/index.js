@@ -33,6 +33,16 @@ app.use(session({
     }
 }));
 
+app.use(session({
+    secret: 'password',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        sameSite: "none",
+        secure: true
+    }
+}));
+
 // app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
