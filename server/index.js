@@ -2,6 +2,8 @@ require("dotenv").config();
 const express = require('express');
 const cors = require("cors");
 const bodyParser = require('body-parser');
+const cookieParser = require('cookie-parser');
+const session = require('express-session');
 
 const usersRoutes = require('./routes/routes');
 
@@ -12,6 +14,26 @@ const corsOptions = {
     credentials: true, // Indiquez que les cookies et les en-têtes d'authentification peuvent être inclus
 };
 
+app.use(cookieParser());
+app.use((req, res, next) => {
+    console.log(req.cookies); // Affiche les cookies dans la console
+    next();
+});
+
+app.use(session({
+    secret: 'password',
+    credentials: true,
+    name: 'cookies-project',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: process.env.ENVIRONMENT === 'production' ? true : 'auto',
+        httpOnly: true,
+        sameSite: process.env.ENVIRONMENT === 'production' ? 'none' : 'lax',
+    }
+}));
+
+// app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(express.json());

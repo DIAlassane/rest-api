@@ -1,12 +1,11 @@
 const { Router } = require("express");
 const userController = require('../controllers/users-controller');
 const loginController = require('../controllers/auth-controller');
-const { authenticateToken } = require("../queries/middleware/authorization");
 
 const router = Router();
 
 // users routes
-router.get('/', authenticateToken, userController.getUsers);
+router.get('/', userController.getUsers);
 router.post('/create', userController.createUsers);
 
 // login routes
