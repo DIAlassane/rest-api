@@ -1,6 +1,9 @@
 const pool = require("../db");
+const queries = require("../queries/user-queries")
+
 const bcrypt = require('bcrypt');
 
+// Create Users
 const createUsers = async (req, res) => {
     try {
         const { 
@@ -14,7 +17,7 @@ const createUsers = async (req, res) => {
         const hashedPassword = await bcrypt.hash(password, 10); // Le deuxième argument est le coût du hash (nombre de tours)
 
         const user = await pool.query(
-            "INSERT INTO connexion ( role, name, firstname, email, password ) VALUES($1, $2, $3, $4, $5) RETURNING *",
+            queries.createUsers,
             [ role, name, firstname, email, hashedPassword]
          );
 
@@ -24,9 +27,10 @@ const createUsers = async (req, res) => {
     }
 }
 
+// Get Users
 const getUsers = async (req, res) => {
     try {
-        const users = await pool.query("SELECT * FROM users");
+        const users = await pool.query(queries.getUers);
         res.json(users.rows);
     } catch (err) {
         console.error(err.message);
@@ -35,4 +39,5 @@ const getUsers = async (req, res) => {
 
 module.exports = {
     getUsers,
+    createUsers,
 }
