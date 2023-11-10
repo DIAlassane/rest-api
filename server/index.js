@@ -6,7 +6,13 @@ const bodyParser = require('body-parser');
 const usersRoutes = require('./routes/routes');
 
 const app = express();
-app.use(cors());
+
+const corsOptions = {
+    origin: 'http://localhost:3000', // Autorise les requêtes provenant de ce domaine
+    credentials: true, // Indiquez que les cookies et les en-têtes d'authentification peuvent être inclus
+};
+
+app.use(cors(corsOptions));
 app.use(bodyParser.json());
 app.use(express.json());
 
