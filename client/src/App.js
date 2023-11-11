@@ -8,6 +8,7 @@ import { Router } from './client/components/protection/Router';
 import DashEmployer from './client/employee/DashEmployer';
 import DashAdmin from './client/admin/DashAdmin';
 import UserProfil from './client/users/UserProfil';
+import { Utilisateurs } from './client/admin/pages/Utilisateurs';
 
 function App() {
   return (
@@ -20,6 +21,7 @@ function App() {
     <Route path='/dashemployer' element={<DashEmployer />} ></Route>
     <Route path='/dashadmin' element={<DashAdmin />} ></Route>
     <Route path='/userprofil' element={<UserProfil />} ></Route>
+    <Route path='/allusers' element={<Utilisateurs />} ></Route>
     </Routes>
     </AuthContextProvider>
     </BrowserRouter>

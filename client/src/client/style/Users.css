@@ -1,0 +1,23 @@
+.userscard {
+    width: auto;
+    height: 30vh;
+    padding: 1rem;
+    background-color: #80808025;
+    cursor: pointer;
+    transition: .3s;
+}
+
+.userscard:hover {
+    background-color: #80808041;
+}
+
+.usersgrid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 15px;
+}
+
+.userscontainer {
+    padding: 2rem;
+    /* background-color: brown; */
+}
