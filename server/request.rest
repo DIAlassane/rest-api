@@ -12,10 +12,10 @@ POST http://localhost:4000/users/create
 Content-Type: application/json
 
 {
-    "role": "employer",
-    "name": "tessdctn3",
-    "firstname": "tesdcdstfn3",
-    "email": "test35@test.com",
+    "role": "",
+    "name": "user",
+    "firstname": "user",
+    "email": "user@test.com",
     "password": "password"
 }
 
@@ -24,10 +24,10 @@ PUT http://localhost:4000/users/updateUser/3
 Content-Type: application/json
 
 {
-    "role": "employer",
-    "name": "tessctn3",
-    "firstname": "tescdstfn3",
-    "email": "test355@test.com",
+    "role": "admin",
+    "name": "nadmin",
+    "firstname": "adfn",
+    "email": "testadmin@test.com",
     "password": "password"
 }
 
