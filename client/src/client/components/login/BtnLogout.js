@@ -9,7 +9,6 @@ export const BtnLogOut = () => {
     const handleLogout = async () => {
         await logout(); // Appel de la fonction de déconnexion
         localStorage.clear();
-    
         navigate('/login'); // Redirection vers la page de connexion après la déconnexion
     };
 
