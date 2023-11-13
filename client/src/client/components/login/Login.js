@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
 
 import '../../style/component/Login.css';
+import { Navbar } from '../nav-footer/Navbar';
 
 export const Login = () => {
     const [email, setEmail] = useState("");
@@ -35,7 +36,9 @@ export const Login = () => {
     }
 
   return (
-    <div>
+    <>
+    <Navbar />
+    <div className='logcontainer'>
         <form className="login" method='POST'
         onSubmit={login}>
             <h1>Se connecter</h1>
@@ -52,5 +55,6 @@ export const Login = () => {
             <a href="/"> retour</a>
         </form>
     </div>
+    </>
   )
 }

@@ -1,0 +1,39 @@
+.navbar {
+    display: flex;
+    padding: 1rem;
+    background-color: #00000052;
+    justify-content: space-between;
+}
+
+.navbar h2 {
+    margin-top: .2rem;
+    margin-bottom: .2rem;
+    height: 5vh;
+}
+
+.navbar ul {
+    display: flex;
+    width: 35%;
+    justify-content: space-between;
+    margin-top: .5rem;
+    margin-bottom: .5rem;
+}
+
+.navbar ul li {
+    width: auto;
+    text-decoration: none;
+    list-style-type: none;
+    padding-top: .5rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: white;
+    font-weight: 900;
+    transition: .3s ease-in-out;
+}
+
+.navbar ul li a:hover {
+    background-color: black;
+    padding: .5rem;
+}

@@ -21,6 +21,7 @@ function App() {
     <Route path='/dashemployer' element={<DashEmployer />} ></Route>
     <Route path='/dashadmin' element={<DashAdmin />} ></Route>
     <Route path='/userprofil' element={<UserProfil />} ></Route>
+    
     <Route path='/allusers' element={<Utilisateurs />} ></Route>
     </Routes>
     </AuthContextProvider>

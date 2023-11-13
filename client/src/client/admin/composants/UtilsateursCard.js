@@ -2,7 +2,7 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 
-import "../../style/users/Users.css";
+import "../../style/Users.css";
 
 export const UtilsateursCard = () => {
   const [users, setUsers] = useState([]);
