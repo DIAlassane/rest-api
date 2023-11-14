@@ -39,7 +39,7 @@ export const Login = () => {
     <>
     <Navbar />
     <div className='logcontainer'>
-        <form className="login" method='POST'
+        <form className="fromstyle" method='POST'
         onSubmit={login}>
             <h1>Se connecter</h1>
             <input type="email" placeholder='email'

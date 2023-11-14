@@ -1,0 +1,64 @@
+.compremier {
+    display: block;
+    width: 90%;
+    margin-left: 5%;
+    background-color: #00000017;
+    justify-content: center;
+    text-align: center;
+    padding-bottom: 1rem;
+    padding-top: 1rem;
+    border-radius: 3px;
+}
+
+.compremier h3 {
+    font-size: 1.5rem;
+    font-weight: 400;
+    justify-content: left;
+    text-align: left;
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+    padding-left: 1rem;
+}
+
+.compremier a {
+    text-decoration: none;
+    color: white;
+    padding: .4rem;
+    background-color: #4646bc;
+    cursor: pointer;
+    transition: 1s ease;
+}
+
+.compremier a:hover {
+    background-color: #6b6bd8;
+}
+
+.credit {
+    display: flex;
+    width: 100%;
+    border-top: .5px solid black;
+    border-bottom: .5px solid black;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    justify-content: space-around;
+    margin-bottom: 1rem;
+}
+
+svg {
+    width: 2em;
+    height: 2em;
+}
+
+.card {
+    padding: .5rem;
+    cursor: pointer;
+    transition: .4s ease-in-out;
+}
+
+.card:hover {
+    background-color: #4646bc;
+}
+
+.card p {
+    font-weight: 900;
+}

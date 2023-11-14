@@ -9,6 +9,7 @@ import DashEmployer from './client/employee/DashEmployer';
 import DashAdmin from './client/admin/DashAdmin';
 import UserProfil from './client/users/UserProfil';
 import { Utilisateurs } from './client/admin/pages/Utilisateurs';
+import { UpdateUser } from './client/admin/pages/UpdateUser';
 
 function App() {
   return (
@@ -23,6 +24,7 @@ function App() {
     <Route path='/userprofil' element={<UserProfil />} ></Route>
     
     <Route path='/allusers' element={<Utilisateurs />} ></Route>
+    <Route path='/updateUser/:id' element={<UpdateUser />} ></Route>
     </Routes>
     </AuthContextProvider>
     </BrowserRouter>

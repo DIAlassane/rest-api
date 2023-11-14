@@ -1,0 +1,32 @@
+.flex {
+    display: flex;
+    width: 90%;
+    margin-left: 5%;
+    background-color: #00000017;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.etatproduit {
+    width: 50%;
+    background-color: #4646bc;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    grid-gap: 10px;
+    border-top: 3px solid black;
+    border-bottom: 3px solid black;
+}
+
+.etatglobal {
+    padding: 1.5rem;
+    background-color: #6b6767;
+    cursor: pointer;
+}
+
+.soustraitant {
+    background-color: #6b6767;
+    width: 50%;
+}

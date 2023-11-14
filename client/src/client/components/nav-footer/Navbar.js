@@ -19,6 +19,7 @@ export const Navbar = () => {
                     <li><Link to="/allusers">Utilisateurs</Link></li>
                     <li><Link to="/">Page 3 a</Link></li>
                     <li><BtnLogOut /></li>
+                    <li>{currentUser?.name}</li>
                     {/* Ajoutez d'autres liens pour le rôle d'admin */}
                 </ul>
             </div>
@@ -32,6 +33,7 @@ export const Navbar = () => {
                     <li><Link to="/">Page B</Link></li>
                     <li><Link to="/">Page C</Link></li>
                     <li><BtnLogOut /></li>
+                    <li>{currentUser?.name}</li>
                     {/* Ajoutez d'autres liens pour le rôle d'employé */}
                 </ul>
             </div>

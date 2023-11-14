@@ -15,14 +15,14 @@ export const UtilsateursCard = () => {
   }, []);
 
   const handleDelete = (id) => {
-    axios
-      .delete("http://localhost:4000/users/" + id)
+    axios.delete(`http://localhost:4000/users/deleteUser/${id}`)
       .then((res) => {
         console.log(res);
         window.location.reload();
       })
-      .catch((errr) => console.log(errr));
-  };
+      .catch((err) => console.log(err));
+};
+
 
   return (
     <div>
@@ -34,8 +34,7 @@ export const UtilsateursCard = () => {
               <p>nom : {user.name}</p>
               <p>prenom : {user.firstname}</p>
               <p>email : {user.email}</p>
-              <p>mdp : {user.password}</p>
-              <div>
+              <div className="btnuc">
                 <Link className="btnedit" to={`/updateUser/${user.user_id}`}>
                   MAJ
                 </Link>

@@ -5,6 +5,8 @@
     background-color: #80808025;
     cursor: pointer;
     transition: .3s;
+    justify-content: center;
+    text-align: center;
 }
 
 .userscard:hover {
@@ -20,4 +22,30 @@
 .userscontainer {
     padding: 2rem;
     /* background-color: brown; */
+}
+
+.btnuc {
+    width: 100%;
+    padding-top: .5rem;
+    padding-bottom: .5rem;
+}
+
+.btnuc a {
+    margin-right: 2rem;
+    background-color: orange;
+    color: black;
+    text-decoration: none;
+    padding: .3rem;
+    transition: .3s ease-in-out;
+}
+
+.btnuc a:hover {
+    background-color: #ebc580;
+}
+
+.btnuc button {
+    padding: .3rem;
+    background-color: red;
+    border: none;
+    cursor: pointer;
 }
