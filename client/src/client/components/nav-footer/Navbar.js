@@ -38,15 +38,15 @@ export const Navbar = () => {
                 </ul>
             </div>
         );
-    } else if (!currentUser) {
+    } else if (currentUser?.role === '') {
         // Navbar par défaut (pas de rôle ou rôle non défini)
         return (
             <div className='navbar'>
                 <h2>Logo Entreprise</h2>
                 <ul>
                     <li><Link to="/">Accueil</Link></li>
-                    <li><Link to="/login">Se connecter</Link></li>
-                    <li></li>
+                    <li><BtnLogOut /></li>
+                    <li>{currentUser?.name}</li>
                     {/* Ajoutez d'autres liens pour la navbar par défaut */}
                 </ul>
             </div>

@@ -1,0 +1,93 @@
+.containerep {
+    width: 100%;
+}
+
+.row {
+    display: flex;
+    width: 100%;
+}
+
+.childone,
+.setprofile,
+.lastparent {
+    display: block;
+    justify-content: center;
+    text-align: center;
+    width: 33%;
+}
+
+.setprofile {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+    height: auto;
+}
+
+.block span:first-child {
+    display: block;
+    margin-bottom: .5rem;
+    font-weight: 900;
+}
+
+.headerchild {
+    padding-top: 8rem;
+}
+
+.rowchild {
+    display: flex;
+}
+
+.setprofile {
+    background-color: #8080801c;
+}
+
+.childtow {
+    padding: .2rem;
+    width: 50%;
+}
+
+.childtow label {
+    display: block;
+    justify-content: left;
+    text-align: left;
+}
+
+.childtow input {
+    width: 90%;
+}
+
+input {
+    padding: .4rem;
+}
+
+.parentow {
+    display: block;
+}
+
+.childtree {
+    margin-top: 1rem;
+}
+
+.childtree label {
+    display: block;
+    justify-content: left;
+    text-align: left;
+    padding-left: 1rem;
+    margin-bottom: .2rem;
+}
+
+.childtree input {
+    width: 90%;
+}
+
+.buttonsave {
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+}
+
+.buttonsave button {
+    padding: .4rem;
+    background-color: #2c2cc5;
+    border: none;
+    border-radius: 2px;
+    color: white;
+}
