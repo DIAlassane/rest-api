@@ -8,6 +8,7 @@ function UserProfil() {
     <div>
       <Navbar />
       <EditProfile />
+      <BtnLogOut />
     </div>
   )
 }

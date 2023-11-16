@@ -1,0 +1,21 @@
+.productcontainer {
+    padding-inline-start: 10px;
+}
+
+.btnexplained {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+}
+
+.btnexplained h1 {
+    background-color: black;
+    color: white;
+    padding: 5px;
+    text-align: center;
+}
+
+.productcard {
+    max-width: auto;
+}

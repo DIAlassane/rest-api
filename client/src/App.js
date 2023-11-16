@@ -10,6 +10,8 @@ import DashAdmin from './client/admin/DashAdmin';
 import UserProfil from './client/users/UserProfil';
 import { Utilisateurs } from './client/admin/pages/Utilisateurs';
 import { UpdateUser } from './client/admin/pages/UpdateUser';
+import { ClientLogin } from './client/components/login/client-login/ClientLogin';
+import { ClientRegister } from './client/components/login/client-login/ClientRegister';
 
 function App() {
   return (
@@ -18,6 +20,8 @@ function App() {
     <Routes> 
     <Route path='/' element={<HomeClient />} ></Route>
     <Route path='/login' element={<Login />} ></Route>
+    <Route path='/clientlogin' element={<ClientLogin />} ></Route>
+    <Route path='/register' element={<ClientRegister />} ></Route>
     <Route path='/router' element={<Router />} ></Route>
     <Route path='/dashemployer' element={<DashEmployer />} ></Route>
     <Route path='/dashadmin' element={<DashAdmin />} ></Route>

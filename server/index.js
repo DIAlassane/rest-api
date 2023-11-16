@@ -4,8 +4,10 @@ const cors = require("cors");
 const bodyParser = require('body-parser');
 const cookieParser = require('cookie-parser');
 const session = require('express-session');
+const sessionClient = require('express-session');
 
 const usersRoutes = require('./routes/routes');
+const clientRoutes = require('./routes/client-routes');
 
 const app = express();
 
@@ -20,6 +22,7 @@ app.use((req, res, next) => {
     next();
 });
 
+// ----------------------- Entreprise sessions ------------------------------------
 app.use(session({
     secret: 'password',
     credentials: true,
@@ -43,6 +46,30 @@ app.use(session({
     }
 }));
 
+// ------------------------------- Client sessions ---------------------------------------
+app.use(sessionClient({
+    secret: 'password',
+    credentials: true,
+    name: 'cookies-client',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        secure: process.env.ENVIRONMENT === 'production' ? true : 'auto',
+        httpOnly: true,
+        sameSite: process.env.ENVIRONMENT === 'production' ? 'none' : 'lax',
+    }
+}));
+
+app.use(sessionClient({
+    secret: 'password',
+    resave: false,
+    saveUninitialized: true,
+    cookie: {
+        sameSite: "none",
+        secure: true
+    }
+}));
+
 // app.use(cookieParser());
 app.use(cors(corsOptions));
 app.use(bodyParser.json());
@@ -50,6 +77,8 @@ app.use(express.json());
 
 // Users Routes
 app.use('/users', usersRoutes);
+// Client Routes
+app.use('/client', clientRoutes);
 
 const port = process.env.PORT || 3001;
 app.listen(port, () => {
