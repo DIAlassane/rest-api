@@ -1,9 +1,20 @@
 import axios from 'axios';
 import React, { useState } from 'react'
 import { useNavigate } from 'react-router-dom';
+import { FaGooglePlus } from "react-icons/fa";
+import { FaGithub } from "react-icons/fa";
+import { 
+    getAuth, 
+    signInWithPopup, 
+    GoogleAuthProvider,
+    signOut, 
+} from "firebase/auth";
 
 import '../../../style/component/ClientLogin.css';
 import { Navbar } from '../../nav-footer/Navbar';
+import { ToastContainer, toast } from 'react-toastify';
+import { useDispatch } from 'react-redux';
+import { addUser } from '../../../../redux/slice';
 
 export const ClientLogin = () => {
     const [email, setEmail] = useState("");
@@ -35,6 +46,43 @@ export const ClientLogin = () => {
         })
     }
 
+    const dispatch = useDispatch();
+    const auth = getAuth();
+    const provider = new GoogleAuthProvider();
+
+    const handleGoogleLogin = (e) => {
+        e.preventDefault();
+
+        signInWithPopup(auth, provider).then((result) => {
+            const user = result.user;
+            dispatch(
+                addUser({
+                    _id: user.uid,
+                    name: user.displayName,
+                    email: user.email,
+                    image: user.photoURL,
+                })
+            );
+            setTimeout(() => {
+                navigate('/')
+                // navigate('/userprofil')
+            })
+        }).catch((error) => {
+            console.log(error);
+        })
+    };
+
+    const handleSignOut = () => {
+        signOut(auth)
+        .then(() => {
+            toast.success("Deconnection reussi");
+            // dispatch(removeUser());
+        })
+        .catch((error) => {
+            console.log(error);
+        });
+    };
+
   return (
     <>
     <Navbar />
@@ -57,6 +105,32 @@ export const ClientLogin = () => {
 
             <a href="/"> retour</a>
         </form>
+        <div>
+                <div onClick={handleGoogleLogin}>
+                    <FaGooglePlus />
+                    <span>Se connecter avec google</span>
+                </div>
+                <div>
+                    <FaGithub />
+                    <span>Se connecter avec Github</span>
+                </div>
+                <button
+                onClick={handleSignOut}
+                >Deconnection</button>
+            </div>
+
+        <ToastContainer
+            position="top-left"
+            autoClose={2000}
+            hideProgressBar={false}
+            newestOnTop={false}
+            closeOnClick
+            rtl={false}
+            pauseOnFocusLoss
+            draggable
+            pauseOnHover
+            theme="dark"
+        />
     </div>
     </>
   )

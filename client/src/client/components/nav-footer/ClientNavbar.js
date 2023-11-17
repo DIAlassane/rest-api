@@ -28,7 +28,9 @@ const ClientNavbar = () => {
                 <span>{productData.length}</span>
             </div>
             </Link>
+            <Link to='/clientlogin'>
             <img className='imgnavprofile' src="https://images.pexels.com/photos/2258536/pexels-photo-2258536.jpeg" alt="photoprofile" />
+            </Link>
         </div>
         </div>
     </div>
