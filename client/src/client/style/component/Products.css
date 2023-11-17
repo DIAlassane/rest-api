@@ -18,4 +18,123 @@
 
 .productcard {
     max-width: auto;
+    width: 100%;
+    max-width: auto;
+    padding: 1rem;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 10px;
+}
+
+.productcardcont {
+    width: auto;
+    height: 40vh;
+    overflow: hidden;
+}
+
+.imgpcc {
+    width: 100%;
+    height: 30ch;
+    object-fit: cover;
+    background-size: cover;
+    transition: .3s ease;
+    cursor: pointer; 
+}
+
+.imgpcc:hover {
+    scale: -110;
+}
+
+.infocard {
+    width: auto;
+    border: 1px solid black;
+    padding: .2rem .3rem;
+}
+
+.title h6 {
+    font-size: .6rem;
+    font-weight: 900;
+    margin-top: .1rem;
+    margin-bottom: .1rem;
+}
+
+.cardproinfo {
+    display: flex;
+    justify-content: space-between;
+    font-weight: 800;
+    font-size: .6rem;
+}
+
+.price {
+    display: flex;
+    gap: 5px;
+    height: 1rem;
+}
+
+.price p {
+    height: 2vh;
+}
+
+.price p:first-child {
+    position: relative;
+    color: gray;
+    text-decoration: line-through;
+}
+
+.globalprice {
+    justify-content: end;
+    display: flex;
+    position: relative;
+    display: block;
+}
+
+.addcart p {
+    display: block;
+    position: relative;
+    width: 50px;
+    color: gray;
+    cursor: pointer;
+    transition: .3s ease;
+}
+
+.addcart p:hover {
+    align-items: center;
+    gap: 3px;
+    top: 0;
+    translate: 32;
+}
+
+.category {
+    width: auto;
+    height: 2vh;
+}
+
+.category p {
+    font-size: .5rem;
+    position: relative;
+    top: -1.5rem;
+}
+
+.category p:last-child {
+    background-color: black;
+    color: white;
+    padding: 5px;
+}
+
+.groupdetailsproduct {
+    width: 100%;
+    padding: 3rem;
+}
+
+.imgdetailsproduct img {
+    width: auto;
+    height: 375px;
+    object-fit: cover;
+}
+
+.imgdetailsproduct p {
+    margin: 0;
+    padding: .2rem;
+    background-color: black;
+    color: white;
 }

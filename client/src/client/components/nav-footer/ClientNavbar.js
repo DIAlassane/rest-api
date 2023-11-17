@@ -1,10 +1,15 @@
 import React from 'react'
 import { CiShoppingCart } from "react-icons/ci";
 
-import '../../../App.css';
 
-const ClientNavbar = () => {
-  return (
+import '../../../App.css';
+import { useSelector } from 'react-redux';
+import { Link } from 'react-router-dom';
+
+const ClientNavbar = () => { 
+    const productData = useSelector((state) => state.bazar.productData);
+
+    return (
     <div className='navcontainer'>
         <div className="insidecontainer">
         <div className='logo'>
@@ -17,10 +22,12 @@ const ClientNavbar = () => {
                 <li>element</li>
                 <li>blog</li>
             </ul>
+            <Link to='/cart'>
             <div className="cart">
                 <CiShoppingCart />
-                <span>0</span>
+                <span>{productData.length}</span>
             </div>
+            </Link>
             <img className='imgnavprofile' src="https://images.pexels.com/photos/2258536/pexels-photo-2258536.jpeg" alt="photoprofile" />
         </div>
         </div>
