@@ -52,8 +52,9 @@ export const ClientLogin = () => {
 
     const handleGoogleLogin = (e) => {
         e.preventDefault();
-
-        signInWithPopup(auth, provider).then((result) => {
+    
+        signInWithPopup(auth, provider)
+        .then((result) => {
             const user = result.user;
             dispatch(
                 addUser({
@@ -64,13 +65,15 @@ export const ClientLogin = () => {
                 })
             );
             setTimeout(() => {
-                navigate('/')
-                // navigate('/userprofil')
-            })
-        }).catch((error) => {
-            console.log(error);
+                navigate('/userprofil');
+            });
         })
+        .catch((error) => {
+            console.log("Error during Google login:", error);
+            toast.error("Erreur lors de la connexion avec Google");
+        });
     };
+    
 
     const handleSignOut = () => {
         signOut(auth)
@@ -102,7 +105,7 @@ export const ClientLogin = () => {
                 <p>Vous n'avez pas de compte ? </p>
                 <a className='register' href="/register">Créer un compte</a>
             </div>
-
+            {loginInfo}
             <a href="/"> retour</a>
         </form>
         <div>

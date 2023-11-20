@@ -82,7 +82,7 @@
 }
 
 .globalprice {
-    justify-content: end;
+    justify-content: flex-end;
     display: flex;
     position: relative;
     display: block;
