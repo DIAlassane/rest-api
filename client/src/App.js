@@ -1,4 +1,4 @@
-import { BrowserRouter, Routes, Route, createBrowserRouter, Outlet, RouterProvider, ScrollRestoration } from 'react-router-dom';
+import { BrowserRouter, Routes, Route } from 'react-router-dom';
 import { AuthContextProvider } from './client/components/protection/AuthContext';
 
 import './App.css';
@@ -12,17 +12,18 @@ import { Utilisateurs } from './client/admin/pages/Utilisateurs';
 import { UpdateUser } from './client/admin/pages/UpdateUser';
 import { ClientLogin } from './client/components/login/client-login/ClientLogin';
 import { ClientRegister } from './client/components/login/client-login/ClientRegister';
-import ClientNavbar from './client/components/nav-footer/ClientNavbar';
+// import ClientNavbar from './client/components/nav-footer/ClientNavbar';
 import Footer from './client/components/nav-footer/Footer';
 import SingleProduct from './client/components/SingleProduct';
 import { Cart } from './client/users/Cart';
+import { Navbar } from './client/components/nav-footer/Navbar';
 // import productsData from './api/Api';
 
 function App() {
   return (
     <BrowserRouter>
     <AuthContextProvider>
-      <ClientNavbar />
+      <Navbar />
     <Routes> 
     <Route path='/' element={<HomeClient />} ></Route>
     <Route path='/login' element={<Login />} ></Route>

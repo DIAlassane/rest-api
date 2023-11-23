@@ -1,14 +1,12 @@
 import React from 'react'
-import { Navbar } from '../components/nav-footer/Navbar'
 import { Performance } from './composants/Performance'
+import { EtatProduit } from './composants/EtatProduit'
 
 import '../style/admin/DashAdmin.css'
-import { EtatProduit } from './composants/EtatProduit'
 
 function DashAdmin() {
   return (
     <div>
-        <Navbar />
         DashAdmin
         <div className="adminboard">
           <Performance />

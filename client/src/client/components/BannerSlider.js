@@ -6,10 +6,10 @@ import "../style/component/BannerSlider.css";
 const BannerSlider = () => {
     const [currentSlide, setCurrentSlide] = useState(0);
     const data = [
+        "https://images.pexels.com/photos/2258536/pexels-photo-2258536.jpeg",
         "https://images.pexels.com/photos/2387873/pexels-photo-2387873.jpeg",
-        "https://images.pexels.com/photos/38289/portrait-photography-profile-face-one-38289.jpeg",
-        "https://images.pexels.com/photos/2747600/pexels-photo-2747600.jpeg",
-        "https://images.pexels.com/photos/777001/pexels-photo-777001.jpeg"
+        "https://images.pexels.com/photos/206434/pexels-photo-206434.jpeg",
+        "https://jpeg.org/images/jpeg-home.jpg"
     ];
 
     const prevSlide = () => {

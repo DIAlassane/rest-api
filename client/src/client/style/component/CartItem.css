@@ -1,0 +1,24 @@
+.mapcartitem {
+    width: 90%;
+    height: auto;
+}
+
+.cartitemleft {
+    width: 30%;
+    display: flex;
+}
+
+.cartitemleft img {
+    width: 40%;
+    height: 15vh;
+    background-position: center;
+    background-size: cover;
+}
+
+.cartitemcontainer {
+    display: flex;
+    justify-content: space-between;
+    border: 1px solid black;
+    margin-bottom: .5rem;
+    padding: .5rem;
+}
