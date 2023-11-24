@@ -1,0 +1,50 @@
+.accordion {
+    width: 100%;
+}
+
+.titre {
+    display: flex;
+    cursor: pointer;
+    color: white;
+    justify-content: center;
+    text-align: center;
+    align-items: center;
+    background-color: black;
+    border-bottom: 10px solid rgba(64, 64, 227, 0.85)
+}
+
+.titre h2 {
+    margin-bottom: 0;
+    margin-top: 0;
+}
+
+.titre span {
+    margin-top: 4px;
+    margin-left: 10px;
+}
+
+.content {
+    color: black;
+    font-weight: 900;
+    max-height: 0;
+    overflow: hidden;
+    transition: all .3s cubic-bezier(0,1,0,1);
+}
+
+.content.show {
+    height: auto;
+    max-height: 999px;
+    transition: all .3s cubic-bezier(1,0,1,0);
+}
+
+.miniglobaccordion a {
+    text-decoration: none;
+}
+
+.linkaccordion {
+    text-decoration: none;
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    grid-gap: 50px;
+    cursor: pointer;
+}

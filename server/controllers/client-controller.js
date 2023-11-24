@@ -92,10 +92,27 @@ const deleteClient = async (req, res) => {
     }
 };
 
+// -------------------------------------------- ------------------------------------------ -----------------------------
+
+const getProducts = async (req, res) => {
+    try {
+      const productsWithStats = await pool.query(
+        'SELECT p.*, s.* FROM produit p LEFT JOIN statproduit s ON p.product_id = s.product_id'
+      );
+  
+      res.status(200).json(productsWithStats.rows);
+    } catch (error) {
+      console.error(error);
+      res.status(404).json({ message: 'Error retrieving products' });
+    }
+  };
+  
+
 module.exports = {
     getClient,
     createClient,
     getOneClient,
     updateClient,
     deleteClient,
+    getProducts,
 }

@@ -15,4 +15,7 @@ router.delete('/deleteClient/:id', clientController.deleteClient);
 router.post('/login', loginController.clientLogin);
 router.post('/logout', loginController.clientLogout);
 
+// product routes
+router.get('/products', clientController.getProducts);
+
 module.exports = router;

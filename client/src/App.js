@@ -17,6 +17,7 @@ import Footer from './client/components/nav-footer/Footer';
 import SingleProduct from './client/components/SingleProduct';
 import { Cart } from './client/users/Cart';
 import { Navbar } from './client/components/nav-footer/Navbar';
+import { ProductsDash } from './client/admin/pages/ProductsDash';
 // import productsData from './api/Api';
 
 function App() {
@@ -37,6 +38,7 @@ function App() {
     <Route path='/cart' element={<Cart />} ></Route>
     <Route path='/allusers' element={<Utilisateurs />} ></Route>
     <Route path='/updateUser/:id' element={<UpdateUser />} ></Route>
+    <Route path='/productsdash' element={<ProductsDash />} ></Route>
     </Routes>
     <Footer />
     </AuthContextProvider>
