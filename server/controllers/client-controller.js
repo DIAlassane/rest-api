@@ -1,5 +1,5 @@
 const pool = require("../db");
-const queries = require("../queries/client-queries")
+const queries = require("../queries/client-queries");
 
 const bcrypt = require('bcrypt');
 

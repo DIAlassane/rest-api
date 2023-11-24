@@ -5,6 +5,7 @@ import ClientNavbar from "../components/nav-footer/ClientNavbar";
 import { AuthContext } from "../components/protection/AuthContext";
 import { ToastContainer, toast } from "react-toastify";
 import StripeCkeckout from 'react-stripe-checkout';
+import axios from "axios";
 
 export const Cart = () => {
   const productData = useSelector((state) => state.bazar.productData);
@@ -29,10 +30,24 @@ export const Cart = () => {
     }
   };
 
+  const token = async (token) => {
+    await axios.post('http://localhost:4000/payment/create-payment-intent', {
+        amount: totalAmt * 100,
+        token: token,
+    });
+  }
+
   return (
-    <div>
+    <div style={{
+        backgroundColor: 'lightgrey',
+    }}>
         <ClientNavbar />
-      <div className="flex" style={{marginTop: '1.5rem',}}>
+      <div className="flex" style={{
+        marginTop: '1.5rem',
+        marginBottom: '1.5rem',
+        backgroundColor: 'white',
+        borderRadius: '5px',
+        }}>
         <div style={{ width: "70%", }}>
           <CartItem />
         </div>
@@ -72,21 +87,22 @@ export const Cart = () => {
             fontWeight: '700',
           }}
           >Ckeckout</button>
-          {
-            payNow && <div>
+           <div>
                 <StripeCkeckout 
                 stripeKey="pk_test_51OFcn7JyB9Z4
                 mU088m3AQmFOpNKxFuq5WU8eR3LTvVaE
                 QjKF6kVyMlbQDd1roK7cBkfU3CkR4b2t
                 oddD38sfh3tn00yaLZImjL"
+                shippingAddress
+                billingAddress
                 name="Grocerie shop"
                 amount={totalAmt * 100}
+                token={token}
                 label="Pay to grocerie"
                 description={`Le total est de $${totalAmt}`}
                 email={currentUser?.email}
                 />
             </div>
-          }
         </div>
       </div>
       <ToastContainer

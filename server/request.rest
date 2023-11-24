@@ -71,4 +71,7 @@ POST http://localhost:4000/client/create
 }
 
 ###
-GET http://localhost:4000/client/
+GET http://localhost:4000/client
+
+###
+POST http://localhost:4000/payment/create-payment-intent
