@@ -53,4 +53,4 @@ const data = [
   },
 ];  
 
-export default AccordionNav;
+export {AccordionNav, data};
